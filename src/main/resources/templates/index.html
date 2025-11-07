@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body> <!-- Levý Alt + 39 = ' -->
+    <h1 th:text="${'Hello Dominik'}"></h1>
+    <ul>
+        <li th:each="item, iter: ${list}">
+            <a th:text="${item}" th:href="@{'/detail/' + ${iter.index}}"></a>
+        </li>
+    </ul>
+</body>
+</html>
