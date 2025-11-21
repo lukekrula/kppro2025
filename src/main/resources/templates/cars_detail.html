@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <title>CAR DETAIL</title>
 </head>
 <body>
     <h1 th:text="${item.title}"></h1>
@@ -10,8 +10,8 @@
     <form method="post" action="">
         <input name="done" type="checkbox" th:checked="${item.done}">
         <input type="submit" value="Save">
-        <a th:href="@{'/delete/' + ${item.id}}">Delete</a>
+        <a th:href="@{'/cars/delete/' + ${item.id}}">Delete</a>
     </form>
-    <a th:href="@{'/'}">Back to list</a>
+    <a th:href="@{'/cars/'}">Back to list</a>
 </body>
 </html>

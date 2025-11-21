@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${item.id == 0 ? 'Add Item' : 'Edit Item'}"></title>
+    <title th:text="${item.id == 0 ? 'Add Car' : 'Edit Car'}"></title>
 </head>
 <body>
-    <h1 th:text="${item.id == 0 ? 'Add Item' : 'Edit Item'}"></h1> <!-- Alt + 39 = ' -->
-    <form th:object="${item}" method="post" th:action="@{'/save'}">
+    <h1 th:text="${item.id == 0 ? 'Add Car' : 'Edit Car'}"></h1> <!-- Alt + 39 = ' -->
+    <form th:object="${item}" method="post" th:action="@{'/cars/save'}">
         <input type="hidden" th:field="*{id}">
         <input type="hidden" th:field="*{done}">
         <input th:field="*{title}" type="text">

@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main Page</title>
+    <title>INDEX</title>
 </head>
 <body> <!-- Levý Alt + 39 = ' -->
-    <h1 th:text="${'Hello Dominik'}"></h1>
-    <a th:href="@{'/add'}">Add new</a>
-    <ul>
-        <li th:each="item: ${list}">
-            <a th:text="${item.title}" th:href="@{'/detail/' + ${item.id}}"></a>
-        </li>
-    </ul>
+    <h1>ENTITIES</h1>
+    <a th:href="@{'/cars/'}">CARS</a><br>
+    <a th:href="@{'/drivers/'}">DRIVERS</a><br>
 </body>
 </html>

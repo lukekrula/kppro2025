@@ -3,13 +3,13 @@ package cz.uhk.kppro.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "items")
-public class Item {
+@Table(name = "cars")
+public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
-    private String description;
+    private String licencePlate;
     private boolean done = false;
 
     public long getId() {
@@ -29,11 +29,11 @@ public class Item {
     }
 
     public String getDescription() {
-        return description;
+        return licencePlate;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String licencePlate) {
+        this.licencePlate = licencePlate;
     }
 
     public boolean isDone() {

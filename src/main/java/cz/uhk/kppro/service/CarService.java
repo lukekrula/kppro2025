@@ -1,14 +1,14 @@
 package cz.uhk.kppro.service;
 
-import cz.uhk.kppro.model.Item;
+import cz.uhk.kppro.model.Car;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public interface ItemService {
-    Item get(long id);
-    void save(Item item);
+public interface CarService {
+    Car get(long id);
+    void save(Car item);
     void delete(long id);
-    List<Item> getAll();
+    List<Car> getAll();
 }

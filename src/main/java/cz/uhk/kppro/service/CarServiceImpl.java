@@ -1,29 +1,29 @@
 package cz.uhk.kppro.service;
 
-import cz.uhk.kppro.model.Item;
-import cz.uhk.kppro.repository.ItemRepository;
+import cz.uhk.kppro.model.Car;
+import cz.uhk.kppro.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ItemServiceImpl implements ItemService {
+public class CarServiceImpl implements CarService {
 
-    private ItemRepository itemRepository;
+    private CarRepository itemRepository;
 
     @Autowired
-    public void setItemRepository(ItemRepository itemRepository) {
+    public void setItemRepository(CarRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
     @Override
-    public Item get(long id) {
+    public Car get(long id) {
         return itemRepository.findById(id).get();
     }
 
     @Override
-    public void save(Item item) {
+    public void save(Car item) {
         itemRepository.save(item);
     }
 
@@ -33,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public List<Item> getAll() {
+    public List<Car> getAll() {
         return itemRepository.findAll();
     }
 }
