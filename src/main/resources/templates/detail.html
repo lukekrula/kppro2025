@@ -5,7 +5,13 @@
     <title>Main Page</title>
 </head>
 <body>
-    <h1 th:text="${'item: '
-    + item}"></h1>
+    <h1 th:text="${item.title}"></h1>
+    <p th:text="${item.description}"></p>
+    <form method="post" action="">
+        <input name="done" type="checkbox" th:checked="${item.done}">
+        <input type="submit" value="Save">
+        <a th:href="@{'/delete/' + ${item.id}}">Delete</a>
+    </form>
+    <a th:href="@{'/'}">Back to list</a>
 </body>
 </html>

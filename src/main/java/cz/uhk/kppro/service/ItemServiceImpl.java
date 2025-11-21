@@ -33,11 +33,6 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void update(Item item) {
-        itemRepository.save(item);
-    }
-
-    @Override
     public List<Item> getAll() {
         return itemRepository.findAll();
     }

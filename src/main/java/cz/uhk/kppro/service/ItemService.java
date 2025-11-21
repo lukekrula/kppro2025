@@ -10,6 +10,5 @@ public interface ItemService {
     Item get(long id);
     void save(Item item);
     void delete(long id);
-    void update(Item item);
     List<Item> getAll();
 }
