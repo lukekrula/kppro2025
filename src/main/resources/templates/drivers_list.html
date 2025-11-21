@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DRIVERS</title>
+</head>
+<body> <!-- Levý Alt + 39 = ' -->
+    <h1>DRIVERS</h1>
+    <a th:href="@{'/drivers/add'}">Add new</a>
+    <ul>
+        <li th:each="item: ${list}">
+            <a th:text="${item.firstName}" th:href="@{'/drivers/detail/' + ${item.id}}"></a>
+        </li>
+    </ul>
+</body>
+</html>

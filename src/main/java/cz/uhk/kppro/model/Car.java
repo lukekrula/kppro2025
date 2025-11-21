@@ -2,6 +2,9 @@ package cz.uhk.kppro.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "cars")
 public class Car {
@@ -11,6 +14,17 @@ public class Car {
     private String title;
     private String licencePlate;
     private boolean done = false;
+
+    @OneToMany(mappedBy = "car")
+    private List<Driver> drivers = new ArrayList<>();
+
+    public List<Driver> getDrivers() {
+        return drivers;
+    }
+
+    public void setDrivers(ArrayList<Driver> drivers) {
+        this.drivers = drivers;
+    }
 
     public long getId() {
         return id;
@@ -28,11 +42,11 @@ public class Car {
         this.title = title;
     }
 
-    public String getDescription() {
+    public String getLicencePlate() {
         return licencePlate;
     }
 
-    public void setDescription(String licencePlate) {
+    public void setLicencePlate(String licencePlate) {
         this.licencePlate = licencePlate;
     }
 

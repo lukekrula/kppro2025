@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${item.id == 0 ? 'Add Driver' : 'Edit Driver'}"></title>
+</head>
+<body>
+    <h1 th:text="${item.id == 0 ? 'Add Driver' : 'Edit Driver'}"></h1> <!-- Alt + 39 = ' -->
+    <form th:object="${item}" method="post" th:action="@{'/drivers/save'}">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{drunk}">
+        <input th:field="*{firstName}" type="text">
+        <textarea th:field="*{lastName}"></textarea>
+        <br>
+        <select th:field="*{car}">
+            <option th:each="car: ${cars}" th:text="${car.title}"
+                    th:value="${car.id}"></option>
+        </select>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

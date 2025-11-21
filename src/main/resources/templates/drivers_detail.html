@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DRIVER DETAIL</title>
+</head>
+<body>
+    <h1 th:text="${item.firstName}"></h1>
+    <p th:text="${item.lastName}"></p>
+    <p th:text="${item.car.title}"></p>
+    <a th:href="@{'/drivers/edit/' + ${item.id}}">EDIT</a>
+    <form method="post" action="">
+        <input name="done" type="checkbox" th:checked="${item.drunk}">
+        <input type="submit" value="Save">
+        <a th:href="@{'/drivers/delete/' + ${item.id}}">Delete</a>
+    </form>
+    <a th:href="@{'/drivers/'}">Back to list</a>
+</body>
+</html>
