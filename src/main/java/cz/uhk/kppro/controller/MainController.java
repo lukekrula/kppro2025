@@ -14,4 +14,15 @@ public class MainController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @GetMapping("/403")
+    @ResponseBody
+    public String forbidden() {
+        return "<h1>TADY NEMÁŠ CO DĚLAT VOLE</h1>";
+    }
 }
